@@ -135,18 +135,16 @@ start:
         BurnerCtrl.Error = BURNER_ERROR_CHIP_UNKNOWN;   // SWD初始化失败
         goto exit;                                      // 初始化失败
     }
-
-    if (swd_read_memory(BurnerCtrl.FlashBlob->FlashSizeAddr,
-                        (void*) &BurnerCtrl.Info.FlashSize,
-                        2) != 0) {
-        rdp++;   // 读取Flash大小失败 可能开启了rdp
-    }
-
     /* 初步匹配编程算法 */
     BurnerCtrl.FlashBlob = FlashBlob_Get(BurnerCtrl.Info.DEV_ID & 0xFFF, 0);
     if (BurnerCtrl.FlashBlob == NULL) {
         BurnerCtrl.Error = BURNER_ERROR_CHIP_UNKNOWN;   // SWD初始化失败
         goto exit;                                      // 初始化失败
+    }
+    if (swd_read_memory(BurnerCtrl.FlashBlob->FlashSizeAddr,
+                        (void*) &BurnerCtrl.Info.FlashSize,
+                        2) != 0) {
+        rdp++;   // 读取Flash大小失败 可能开启了rdp
     }
     /* 初始化选项字节编程算法 */
     if (target_flash_init(BurnerCtrl.FlashBlob->prog_opt, 0) != ERROR_SUCCESS) {
