@@ -67,39 +67,39 @@ const FlashBlobList_t FlashBlobList[] = {
     },
     {
         /* STM32F10x_LD: 小容量产品 16K~32K */
-        .DevId         = 0x412,              // 设备ID
-        .Name          = "STM32F10x_LD",     // 产品名称
-        .FlashSizeAddr = 0x1FFFF7E0,         // Flash大小寄存器地址
-        .FlashSize     = {16, 32},           // Flash大小范围
-        .prog_flash    = &_stm32f10x_128_,   // Flash编程算法
-        .prog_opt      = &_stm32f10x_opt_,   // 选项字编程算法
+        .DevId         = 0x412,               // 设备ID
+        .Name          = "GD/STM32F10x_LD",   // 产品名称
+        .FlashSizeAddr = 0x1FFFF7E0,          // Flash大小寄存器地址
+        .FlashSize     = {16, 32},            // Flash大小范围
+        .prog_flash    = &_stm32f10x_128_,    // Flash编程算法
+        .prog_opt      = &_stm32f10x_opt_,    // 选项字编程算法
     },
     {
         /* STM32F10x_MD: 中容量产品 64K~128K */
-        .DevId         = 0x410,              // 设备ID
-        .Name          = "STM32F10x_MD",     // 产品名称
-        .FlashSizeAddr = 0x1FFFF7E0,         // Flash大小寄存器地址
-        .FlashSize     = {64, 128},          // Flash大小范围
-        .prog_flash    = &_stm32f10x_128_,   // Flash编程算法
-        .prog_opt      = &_stm32f10x_opt_,   // 选项字编程算法
+        .DevId         = 0x410,               // 设备ID
+        .Name          = "GD/STM32F10x_MD",   // 产品名称
+        .FlashSizeAddr = 0x1FFFF7E0,          // Flash大小寄存器地址
+        .FlashSize     = {64, 128},           // Flash大小范围
+        .prog_flash    = &_stm32f10x_128_,    // Flash编程算法
+        .prog_opt      = &_stm32f10x_opt_,    // 选项字编程算法
     },
     {
         /* STM32F10x_HD: 高容量产品 256K~512K */
-        .DevId         = 0x414,              // 产品ID
-        .Name          = "STM32F10x_HD",     // 产品名称
-        .FlashSizeAddr = 0x1FFFF7E0,         // Flash大小寄存器地址
-        .FlashSize     = {256, 512},         // Flash大小范围
-        .prog_flash    = &_stm32f10x_512_,   // Flash编程算法
-        .prog_opt      = &_stm32f10x_opt_,   // 选项字编程算法
+        .DevId         = 0x414,               // 产品ID
+        .Name          = "GD/STM32F10x_HD",   // 产品名称
+        .FlashSizeAddr = 0x1FFFF7E0,          // Flash大小寄存器地址
+        .FlashSize     = {256, 512},          // Flash大小范围
+        .prog_flash    = &_stm32f10x_512_,    // Flash编程算法
+        .prog_opt      = &_stm32f10x_opt_,    // 选项字编程算法
     },
     {
         /* STM32F10x_XL: 互联型产品 */
-        .DevId         = 0x418,              // 产品ID
-        .Name          = "STM32F10x_XL",     // 产品名称
-        .FlashSizeAddr = 0x1FFFF7E0,         // Flash大小寄存器地址
-        .FlashSize     = {128, 256},         // Flash大小范围
-        .prog_flash    = &_stm32f10x_512_,   // Flash编程算法
-        .prog_opt      = &_stm32f10x_opt_,   // 选项字编程算法
+        .DevId         = 0x418,               // 产品ID
+        .Name          = "GD/STM32F10x_XL",   // 产品名称
+        .FlashSizeAddr = 0x1FFFF7E0,          // Flash大小寄存器地址
+        .FlashSize     = {128, 256},          // Flash大小范围
+        .prog_flash    = &_stm32f10x_512_,    // Flash编程算法
+        .prog_opt      = &_stm32f10x_opt_,    // 选项字编程算法
     },
     {
         /* STM32F2xx */
@@ -125,7 +125,7 @@ const FlashBlobList_t FlashBlobList[] = {
         .Name          = "STM32F405xx/07xx STM32F415xx/17xx",   // 产品名称
         .FlashSizeAddr = 0x1FFF7A22,                            // Flash大小寄存器地址
         .FlashSize     = {128, 1024},                           // Flash大小范围
-        .prog_flash    = &_stm32f4xx_1024_,                          // Flash编程算法
+        .prog_flash    = &_stm32f4xx_1024_,                     // Flash编程算法
         .prog_opt      = &_stm32f40xxx_41xxx_opt_,              // 选项字编程算法
     },
 };

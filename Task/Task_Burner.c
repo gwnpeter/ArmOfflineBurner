@@ -161,6 +161,8 @@ start:
     /* 反初始化选项字节编程算法 */
     target_flash_uninit();
 
+    swd_set_target_reset(0);   // 复位芯片
+
     /* 等待响应 */
     for (uint16_t i = 0; i < 200; i++) {
         Delay(10);
