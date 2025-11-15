@@ -4,7 +4,7 @@
 #include "Tool.h"
 #include "stm32f10x.h"
 
-#define BUZZER_RCCCLOCK RCC_AHB1Periph_GPIOB
+#define BUZZER_RCCCLOCK RCC_APB2Periph_GPIOB
 #define BUZZER_PORT     GPIOB
 #define BUZZER_PIN      GPIO_Pin_1
 
