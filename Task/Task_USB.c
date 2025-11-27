@@ -3,6 +3,8 @@
 #include "hw_config.h"
 #include "usb_pwr.h"
 
+static uint16_t USB_Reset_Timer = 0;
+
 /**
  * @brief  USB任务处理函数
  * @note   100ms执行一次
@@ -20,4 +22,20 @@ void USB_Task(void) {
     } else {
         usb_timeout = 0;
     }
+    if (USB_Reset_Timer > 0) {
+        if (--USB_Reset_Timer == 0) {
+            NVIC_SystemReset();
+        }
+    }
+}
+
+/**
+ * @brief  USB重置函数
+ * @note   延时1秒后重置USB
+ * @retval None
+ */
+void USB_Reset(void) {
+    USB_Reset_Timer = 10;   // 1秒后重置USB
+    USB_Unload();
+    Beep(500);
 }

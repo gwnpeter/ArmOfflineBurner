@@ -96,6 +96,8 @@ int main(void) {
     Set_USBClock();
     USB_Interrupts_Config();
     USB_Init();
+
+    Beep(50);
     /* 进行任务处理 */
     Task_Process();
     while (1) {

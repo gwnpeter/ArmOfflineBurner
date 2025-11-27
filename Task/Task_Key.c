@@ -52,7 +52,11 @@ void Key_Task(void) {
  * @retval 1: 事件处理成功, 0: 事件处理失败
  */
 static uint8_t Key_ClickEvent(uint32_t key) {
-    BurnerCtrl.State = BURNER_STATE_START;
+    if (USB_StateGet() != 0) {
+        USB_Reset();
+    } else {
+        BurnerCtrl.State = BURNER_STATE_START;
+    }
     return 1;
 }
 
@@ -63,8 +67,11 @@ static uint8_t Key_ClickEvent(uint32_t key) {
  * @retval 1: 事件处理成功, 0: 事件处理失败
  */
 static uint8_t Key_LongPressEvent(uint32_t key) {
-    USB_Mount();
-    return 1;
+    if (USB_StateGet() == 0) {
+        USB_Mount();
+        return 1;
+    }
+    return 0;
 }
 
 /**

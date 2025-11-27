@@ -4,5 +4,6 @@
 #include "stm32f10x.h"
 
 void USB_Task(void);
+void USB_Reset(void);
 
 #endif
