@@ -13,7 +13,7 @@ static uint16_t USB_Reset_Timer = 0;
 void USB_Task(void) {
     static uint16_t usb_timeout = 0;
     if (USB_StateGet()) {
-        if (usb_timeout < 20) {
+        if (usb_timeout < 30) {
             usb_timeout++;
         } else if (bDeviceState != CONFIGURED) {
             USB_Unload();
